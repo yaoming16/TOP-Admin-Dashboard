@@ -10,10 +10,6 @@ body {
 
 /* NavBar Styles*/
 
-nav {
-    padding: 0.5rem;
-}
-
 ul {
     margin: 0;
 }
@@ -45,11 +41,12 @@ li a:hover {
 nav {
     top: 0;
     left: 0;
-    height: 100vh;
+    height: var(--nav-height);
     margin-top: 0;
     position: sticky;
     background-color: #064E3B;
     color: white;
+    padding: 0.5rem;
 }
 
 nav svg {
@@ -455,17 +452,38 @@ html {
         z-index: 1000;
     }
 
-    nav div { padding: 0; margin-right: 0.5rem; }
-    nav ul { display: flex; gap: 0.2rem; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0; }
+    nav div { 
+        padding: 0; 
+        margin-right: 
+        0.5rem; 
+    }
+
+    nav ul { 
+        display: flex; 
+        gap: 0.2rem; 
+        overflow-x: auto; 
+        -webkit-overflow-scrolling: touch; 
+        margin: 0; 
+    }
+
     nav ul:nth-of-type(2) { margin-top: 0; }
 
     li {
         margin-top: 0;
         padding: 0 0.15rem;
     }
-    nav svg { width: 1.5rem; height: 1.5rem; margin-right: 0; }
+    nav svg { 
+        width: 1.5rem; 
+        height: 1.5rem; 
+        margin-right: 0; 
+    }
+
     li a { font-size: 1rem; }
-    li a.nav-icon { padding: 0.5rem; border-radius: 8px; }
+
+    li a.nav-icon { 
+        padding: 0.5rem; 
+        border-radius: 8px; 
+    }
 
     main {
         margin-top: var(--nav-height);
@@ -492,11 +510,21 @@ html {
         font-size: 0.95rem;
     }
 
-    .icon-img { width: 2.8rem; height: 2.8rem; }
-    .bigger-img { width: 6rem; height: 6rem; }
+    .icon-img { 
+        width: 2.8rem; 
+        height: 2.8rem; 
+    }
+    .bigger-img { 
+        width: 6rem; 
+        height: 6rem; 
+    }
 
-    .small-title { font-size: 0.95rem; }
-    .medium-title { font-size: 1.15rem; }
+    .small-title { 
+        font-size: 0.95rem; 
+    }
+    .medium-title { 
+        font-size: 1.15rem; 
+    }
 
     .btn {
         min-width: auto;
@@ -506,7 +534,10 @@ html {
     }
 
     .main-content-container { flex-direction: column; }
-    .content-wrapper, .right-container { width: 100%; margin-left: 0; }
+    .content-wrapper, .right-container { 
+        width: 100%; 
+        margin-left: 0; 
+    }
 
     .data-grid { grid-template-columns: 1fr; gap: 0.75rem; }
 
