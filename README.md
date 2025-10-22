@@ -11,7 +11,7 @@ Key files
 - `read.md` — this file
 
 Reference
-- Layout inspiration / guide: https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-creating-a-grid
+- Layout inspiration / guide: https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-admin-dashboard
 
 - Link to the page: https://yaoming16.github.io/TOP-Admin-Dashboard/
 
