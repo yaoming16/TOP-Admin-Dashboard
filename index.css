@@ -200,7 +200,7 @@ table svg:hover {
 
 .data-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
     gap: 1.5rem;
     align-items: stretch;
 }
@@ -276,7 +276,7 @@ table svg:hover {
 
 .main-content-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .right-container {
@@ -294,4 +294,29 @@ table svg:hover {
 
 .border-bottom {
     border-bottom: solid 2px #66b892;
+}
+
+nav .hide {
+        display: none;
+}
+
+
+
+@media screen and (min-width: 768px) {
+
+    .data-grid {
+        grid-template-columns: repeat(2, minmax(300px, 1fr));
+    }
+
+    .main-content-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    nav .hide {
+        display: block;
+    }
+
+    
+
 }
