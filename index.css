@@ -10,6 +10,10 @@ body {
 
 /* NavBar Styles*/
 
+nav {
+    padding: 0.5rem;
+}
+
 ul {
     margin: 0;
 }
@@ -29,7 +33,7 @@ li {
 li a {
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: white;
     transition: color 0.5s ease-in-out;
 }
@@ -41,7 +45,6 @@ li a:hover {
 nav {
     top: 0;
     left: 0;
-    width: 25%;
     height: 100vh;
     margin-top: 0;
     position: sticky;
@@ -50,8 +53,8 @@ nav {
 }
 
 nav svg {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
     margin-right: 1.5rem;
     fill: currentColor;
 }
@@ -77,30 +80,29 @@ main {
 
 .top-table {
     width: 100%;
-}
-
-.top-table td {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
     align-items: center;
-    vertical-align: middle;
+}
+
+.top-table > .column-one-top,
+.top-table > .column-two-top {
     padding: 15px;
-}
-
-.column-one-top {
-    width: 60%;
-}
-
-.column-two-top {
-    width: 40%;
+    display: flex;
+    align-items: center;
 }
 
 .cell-row {
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 0.5rem;
+    width: 100%;
 }
 
 .cell-row input {
-    width: 75%;
+    width: 100%;
     height: 2rem;
     border-radius: 7px;
     border: solid 2px #A7F3D0; 
@@ -116,14 +118,14 @@ main {
     box-shadow: 0 0 0 4px rgba(167,243,208,0.15);
 }
 
-table svg {
+.top-table svg {
     width: 1.5rem;
     height: 1.5rem;
     fill: #033326;
     transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
 }
 
-table svg:hover {
+.toptable svg:hover {
     width: 2rem;
     height: 2rem;
 } 
@@ -192,15 +194,14 @@ table svg:hover {
     background-color: #059669;
 }
 
-/* añadidos para layout de tarjetas */
 .content-section {
-    padding: 2rem 3rem;
+    padding: 1rem 2rem;
 }
 
 
 .data-grid {
     display: grid;
-    grid-template-columns: repeat(1, minmax(300px, 1fr));
+    grid-template-columns: repeat(1, minmax(1fr));
     gap: 1.5rem;
     align-items: stretch;
 }
@@ -246,7 +247,7 @@ table svg:hover {
 
 .card-title {
     text-align: left;
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: bold;
     color: #033326;
     margin-bottom: 1rem;
@@ -276,7 +277,7 @@ table svg:hover {
 
 .main-content-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .right-container {
@@ -296,16 +297,32 @@ table svg:hover {
     border-bottom: solid 2px #66b892;
 }
 
-nav .hide {
-        display: none;
+.hide {
+    display: none !important;
+}
+
+.hide-1000 {
+    display: none !important;
+}
+
+.left-card-div .cell-row {
+        flex-direction: column;
+    }
+
+html {
+    font-size: 16px;
+    font-family: Roboto, sans-serif;
 }
 
 
 
-@media screen and (min-width: 768px) {
+
+@media screen and (min-width: 830px) {
+
+
 
     .data-grid {
-        grid-template-columns: repeat(2, minmax(300px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .main-content-container {
@@ -313,10 +330,189 @@ nav .hide {
         flex-direction: row;
     }
 
-    nav .hide {
-        display: block;
+    .hide {
+        display: block !important;
     }
 
-    
+    .content-section {
+        padding: 2rem 3rem;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .hide-1000 {
+        display: block !important;
+    }
+
+    .left-card-div .cell-row {
+        flex-direction: row;
+    }
+
+    .top-table {
+        grid-template-columns: 60% 40%;
+    }
 
 }
+
+@media screen and (max-width: 829px) {
+    :root { --nav-height: 64px; }
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: var(--nav-height);
+        padding: 0 0.75rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: #064E3B;
+        z-index: 1000;
+        overflow: visible;
+    }
+
+    nav div {
+        padding: 0;
+        margin-right: 0.5rem;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        gap: 0.25rem;
+        align-items: center;
+        margin: 0;
+    }
+
+    nav ul:nth-of-type(2) {
+        margin-top: 0;
+    }
+
+    li {
+        margin-top: 0;
+        padding: 0 0.25rem;
+    }
+
+    nav svg {
+        width: 1.75rem;
+        height: 1.75rem;
+        margin-right: 0;
+    }
+
+    li a.nav-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem;
+    }
+
+    main {
+        margin-top: var(--nav-height);
+        padding-top: 0.5rem;
+    }
+
+    .top-section {
+        padding: 1rem 1rem;
+    }
+
+    .top-table {
+        grid-template-columns: 1fr;
+    }
+
+    .cell-row {
+        gap: 0.5rem;
+    }
+
+    .icon-img { width: 3.5rem; height: 3.5rem; }
+    .bigger-img { width: 8rem; height: 8rem; }
+
+    .content-wrapper { width: 100%; }
+
+    .data-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    :root { --nav-height: 56px; }
+
+    body {
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: var(--nav-height);
+        padding: 0 0.5rem;
+        display: flex;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    nav div { padding: 0; margin-right: 0.5rem; }
+    nav ul { display: flex; gap: 0.2rem; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0; }
+    nav ul:nth-of-type(2) { margin-top: 0; }
+
+    li {
+        margin-top: 0;
+        padding: 0 0.15rem;
+    }
+    nav svg { width: 1.5rem; height: 1.5rem; margin-right: 0; }
+    li a { font-size: 1rem; }
+    li a.nav-icon { padding: 0.5rem; border-radius: 8px; }
+
+    main {
+        margin-top: var(--nav-height);
+        padding-top: 0.5rem;
+    }
+
+    .top-section { padding: 0.75rem 0.75rem; }
+    .top-table {
+        grid-template-columns: 1fr;
+        gap: 0;
+        align-items: stretch;
+    }
+    .top-table > .column-one-top,
+    .top-table > .column-two-top {
+        padding: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    .cell-row { gap: 0.35rem; }
+    .cell-row input {
+        height: 1.9rem;
+        padding: 0.2rem 0.45rem;
+        font-size: 0.95rem;
+    }
+
+    .icon-img { width: 2.8rem; height: 2.8rem; }
+    .bigger-img { width: 6rem; height: 6rem; }
+
+    .small-title { font-size: 0.95rem; }
+    .medium-title { font-size: 1.15rem; }
+
+    .btn {
+        min-width: auto;
+        padding: 0.35rem 0.65rem;
+        font-size: 0.95rem;
+        height: auto;
+    }
+
+    .main-content-container { flex-direction: column; }
+    .content-wrapper, .right-container { width: 100%; margin-left: 0; }
+
+    .data-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+
+    .card-div, .icon-img, .bigger-img {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
+
