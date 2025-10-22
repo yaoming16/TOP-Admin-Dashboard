@@ -44,6 +44,7 @@ nav {
     width: 25%;
     height: 100vh;
     margin-top: 0;
+    position: sticky;
     background-color: #064E3B;
     color: white;
 }
@@ -100,6 +101,7 @@ main {
 
 .cell-row input {
     width: 75%;
+    height: 2rem;
     border-radius: 7px;
     border: solid 2px #A7F3D0; 
     background-color: #ECFDF5; 
@@ -118,18 +120,38 @@ table svg {
     width: 1.5rem;
     height: 1.5rem;
     fill: #033326;
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
 }
+
+table svg:hover {
+    width: 2rem;
+    height: 2rem;
+} 
 
 .icon-img {
     width: 4rem;
     height: 4rem;
     border-radius: 50px;
     object-fit: cover;
+    transition: box-shadow 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+
+.icon-img:hover {
+    box-shadow: 5px 5px 10px rgb(167, 243, 208);
+    width: 5rem;
+    height: 5rem;
 }
 
 .bigger-img {
-    width: 6rem;
-    height: 6rem;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 100px;
+}
+
+.bigger-img:hover {
+    box-shadow: 7px 7px 15px rgb(167, 243, 208);
+    width: 11rem;
+    height: 11rem;
 }
 
 .second-column {
@@ -137,7 +159,7 @@ table svg {
 }
 
 .mr-1 {
-    margin-right: 2rem;
+    margin-right: 1rem;
 }
 
 .small-title {
@@ -162,17 +184,114 @@ table svg {
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    min-width: 20%;
+    min-width: 25%;
+    height: 2rem;
 }
 
 .btn:hover {
     background-color: #059669;
 }
 
-/* Content Section */
-
+/* añadidos para layout de tarjetas */
 .content-section {
     padding: 2rem 3rem;
 }
 
 
+.data-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+.content-wrapper {
+    width: 70%;
+}
+
+.card-div {
+    border: solid 2px #A7F3D0;
+    border-left: solid 8px #10B981;
+    background-color: #ECFDF5; 
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out, rotate 0.3s ease-in-out;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    min-height: 220px;
+}
+
+.card-div:hover {
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.15);
+    border: solid 2px #86e2b7;
+    border-left: solid 8px #046e4b;
+    rotate: 0.5deg;
+}
+
+.left-card-div {
+    border-left: solid 2px #A7F3D0;
+    justify-content: flex-start;
+    height: auto;
+}
+
+.left-card-div:hover {
+    border-left: solid 2px #A7F3D0;
+}
+
+
+
+.card-title {
+    text-align: left;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #033326;
+    margin-bottom: 1rem;
+}
+
+.card-title p {
+    text-align: justify;
+    font-weight: normal;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.icon-transition {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: #033326;
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out, fill 0.3s ease-in-out;
+}
+
+.icon-transition:hover {
+    width: 3rem;
+    height: 3rem;
+    fill: #07c586;
+}
+
+.main-content-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.right-container {
+    width: 30%;
+    margin-left: 2rem;
+}
+
+.mt-0 {
+    margin-top: 0;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.border-bottom {
+    border-bottom: solid 2px #66b892;
+}
